@@ -1,12 +1,9 @@
 window.onload = function() {
-  // Apply styles to the <p> element
-  const mainText = document.getElementById("main-text");
-  mainText.style.fontStyle = "italic";
-  mainText.style.opacity = 0.6;
-  mainText.style.fontSize = "larger";
-
-  // Add event listener to the reload button
   const reloadButton = document.getElementById("reloadButton");
+  const mainText = document.getElementById("main-text");
+
+  let initialContent = mainText.innerHTML;
+
   reloadButton.addEventListener("click", function() {
     mainText.innerHTML = generateExcuse();
   });
