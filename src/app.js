@@ -1,24 +1,26 @@
 window.onload = function() {
-  const reloadButton = document.getElementById("reloadButton");
+  // Apply styles to the <p> element
   const mainText = document.getElementById("main-text");
+  mainText.style.fontStyle = "italic";
+  mainText.style.opacity = 0.6;
+  mainText.style.fontSize = "larger";
 
-  let initialContent = mainText.innerHTML;
-
+  // Add event listener to the reload button
+  const reloadButton = document.getElementById("reloadButton");
   reloadButton.addEventListener("click", function() {
-    mainText.innerHTML = generateDomain();
+    mainText.innerHTML = generateExcuse();
   });
 };
 
-function generateDomain() {
-  let pronouns = ["the", "our", "your", "my", "his", "her", "their", "this", "that", "these"];
-  let subjects = ["runner", "rocket", "ocean", "star", "sun", "moon", "planet", "cloud", "flower", "bird"];
-  let verbs = ["running", "flying", "swimming", "shining", "glowing", "soaring", "floating", "dancing", "singing", "growing"];
-  let adverbs = ["quickly", "slowly", "gracefully", "elegantly", "smoothly", "bravely", "carefully", "happily", "loudly", "quietly"];
-  let domains = [".com", ".net", ".edu", ".org", ".io", ".co", ".info", ".biz", ".tv", ".me"];
+function generateExcuse() {
+  let who = ["I", "My dog", "My cat", "My little brother", "My friend", "The neighbor"];
+  let didWhat = ["ate", "destroyed", "hid", "lost", "spilled", "broke"];
+  let toWhat = ["my homework", "the computer", "the keys", "the phone", "the cake", "the vase"];
+  let when = ["yesterday", "last night", "this morning", "while I was sleeping", "during lunchtime"];
 
-  let randomDomain = getRandomElement(pronouns) + getRandomElement(subjects) + getRandomElement(verbs) + getRandomElement(adverbs) + getRandomElement(domains);
+  let excuse = getRandomElement(who) + " " + getRandomElement(didWhat) + " " + getRandomElement(toWhat) + " " + getRandomElement(when) + ".";
 
-  return randomDomain;
+  return excuse;
 }
 
 function getRandomElement(arr) {
